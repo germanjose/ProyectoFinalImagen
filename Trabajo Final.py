@@ -29,12 +29,12 @@ class Image_Viewer:
         try: 
             File = fd.askopenfilename() 
             self.pilImage = Image.open(File) 
-            re=self.pilImage.resize((700,500),Image.ANTIALIAS) 
+            re= self.pilImage.resize((700,500)) 
             self.img = ImageTk.PhotoImage(re) 
             self.canvas.delete(ALL) 
             self.canvas.create_image(self.c_size[0]/2+10,self.c_size[1]/2+10, anchor=CENTER,image=self.img) 
-            self.status['text']='Imagen:'+File 
-        
+            #self.status['text']='Imagen:'+File 
+
         except: 
             ms.showerror('¡Error!','Tipo no soportado') 
 root=Tk() 
